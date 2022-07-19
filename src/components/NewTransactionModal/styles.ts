@@ -50,12 +50,25 @@ export const Container = styled.form`
 `;
 
 export const TransactionTypeContainer = styled.div`
-    margin: 1rem 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
 
-    button{
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: var(--text-title);
+  }
+`;
+
+export const RadioBox = styled.button`
         height: 4rem;
         border: 1px solid #d7d7d7;
         border-radius: 0.25rem;
@@ -68,22 +81,6 @@ export const TransactionTypeContainer = styled.div`
         transition: border-color 0.2s;
 
         &:hover{
-            border-color: ${darken(0.1, '#D7D7D7D')};
+            border-color: ${darken(0.1, "#D7D7D7D")};
         }
-
-        &:focus{
-        }
-    }
-
-    img{
-        width: 20px;
-        height: 20px;
-    }
-
-    span{
-        display: inline-block;
-        margin-left: 1rem;
-        font-size: 1rem;
-        color: var(--text-title);
-    }
 `;
