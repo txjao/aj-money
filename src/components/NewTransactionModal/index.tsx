@@ -1,9 +1,11 @@
 import Modal from "react-modal";
+import { api } from "../services/api";
 import { Container, RadioBox, TransactionTypeContainer } from "./styles";
 import closeImage from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import { FormEvent, useState } from "react";
+
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -20,6 +22,14 @@ export function NewTransactionModal({isOpen,onRequestClose,}: NewTransactionModa
   function handleCreateNewTransaction(event: FormEvent){
     event.preventDefault();
 
+    const data = {
+      title,
+      value,
+      category,
+      type
+    };
+
+    api.post('/transactions', data)
 
   }
 
@@ -42,12 +52,13 @@ export function NewTransactionModal({isOpen,onRequestClose,}: NewTransactionModa
         <h2>Cadastrar Transação</h2>
         <input placeholder="Título" 
         value={title}
-        onChange= {event => event.target.value}
-        />
+        onChange= {event => setTitle(event.target.value)} />
+
 
         <input 
         type="number"
         value={value}
+        onChange= {event => setValue(parseInt(event.target.value))}
         placeholder="Valor" />
 
         <TransactionTypeContainer>
@@ -74,7 +85,10 @@ export function NewTransactionModal({isOpen,onRequestClose,}: NewTransactionModa
 
         </TransactionTypeContainer>
 
-        <input placeholder="Categoria" />
+        <input 
+        placeholder="Categoria"
+        value={category} 
+        onChange= {event => setCategory(event.target.value)} />
         <button type="submit">Cadastrar</button>
       </Container>
     </Modal>

@@ -31,5 +31,6 @@ export const Container = styled.div`
       &.withdraw{
         color: var(--red);
     }
-  }
+     } 
+     }
 `;
