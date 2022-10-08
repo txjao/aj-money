@@ -4,13 +4,13 @@
 <strong>Projeto em ReactJs, usando as tecnologias:</strong>
 <ul>
   <li>
-    Tailwind
+    Styled COmponents
+  </li>
   <li>
+    MirageJs
+  </li>
   <li>
-    Tailwind
-  <li>
-  <li>
-    Tailwind
-  <li>
+    Axios
+  </li>
 </ul>
 </span>
