@@ -3,12 +3,12 @@ import { Container } from "./style";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import total from "../../assets/total.svg";
-import { TrasanctionContext } from "../../TransactionsContext";
+import { TrasanctionContext, useTransactions } from "../hooks/useTransactions";
 import { access } from 'fs';
 
 export function Summary() {
 
-  const { transactions } = useContext(TrasanctionContext);
+  const { transactions } = useTransactions();
 
 
   // const moneyFlow = transactions.reduce((acc, transaction) => {
